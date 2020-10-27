@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #Icons
+  font_awesome_flutter: ^8.8.1
   #GetX
   get_storage: ^1.3.0
   get: ^3.5.1
