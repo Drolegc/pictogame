@@ -10,9 +10,8 @@ class StartButton extends StatefulWidget {
 }
 
 class _StartButtonState extends State<StartButton> {
-
-  AnimationsController _animationsController = Get.put(AnimationsController());
-
+  
+  AnimationsController _animationsController = Get.find();
   @override
   void initState() {
     super.initState();
