@@ -21,10 +21,11 @@ void main() {
       ),
       GetPage(
         name: '/boardgame',
-        page: () => BoardGameScreen()
+        page: () => BoardGameScreen(),
+          binding: NewPlayBindings()
       )
     ],
-    initialRoute: '/boardgame',
+    initialRoute: '/',
   ));
 }
 
