@@ -7,10 +7,15 @@ class PlayerPath extends StatelessWidget {
 
   final GameController _gameController = Get.find();
 
+  bool isTeam1;
+
+  PlayerPath({Key key, @required this.isTeam1}):assert(isTeam1 != null);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        verticalDirection: VerticalDirection.up,
         children: _buildSquarePoint(),
       ),
     );
@@ -19,19 +24,19 @@ class PlayerPath extends StatelessWidget {
   List<Widget> _buildSquarePoint(){
     List<Widget> squares = List<Widget>();
     var number = 1;
-    for(var i = 0; i <= _gameController.maxPoints;i++){
+    for(var i = 1; i <= 15;i++){
       switch(number){
         case 1:
-          squares.add(Expanded(child: SquarePoint.VERB(point: i)));
+          squares.add(SquarePoint.VERB(point: i,isTeam1: this.isTeam1,));
           break;
         case 2:
-          squares.add(Expanded(child: SquarePoint.ADJETIVE(point:i)));
+          squares.add(SquarePoint.ADJETIVE(point:i,isTeam1: this.isTeam1,));
           break;
         case 3:
-          squares.add(Expanded(child: SquarePoint.HARD(point: i)));
+          squares.add(SquarePoint.HARD(point: i,isTeam1: this.isTeam1,));
           break;
         case 4:
-          squares.add(Expanded(child: SquarePoint.ALLPLAYS(point: i)));
+          squares.add(SquarePoint.ALLPLAYS(point: i,isTeam1: this.isTeam1,));
           break;
       }
       number = (number == 4) ? 1 : number + 1;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pictogame/Controllers/Game/game_controller.dart';
+import 'package:pictogame/Screens/Boardgame/widgets/center_board_game.dart';
 import 'package:pictogame/Screens/Boardgame/widgets/player_path.dart';
 import 'package:pictogame/colors.dart';
 
@@ -17,18 +18,14 @@ class BoardGameScreen extends StatelessWidget {
           children: [
             Flexible(
               flex: 1,
-                child: PlayerPath()
+                child: PlayerPath(isTeam1: true,)
             ),
             Flexible(
               flex: 5,
-              child: Container(
-                child: Center(
-                  child: Text("Hi"),
-                ),
-              ),
+              child: CenterBoardGame()
             ),
             Flexible(
-                child: PlayerPath(),
+                child: PlayerPath(isTeam1: false,),
               flex: 1,
             )
           ],
